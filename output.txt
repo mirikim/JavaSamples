@@ -1,0 +1,6 @@
+#Properties Example
+#Thu Jan 14 17:57:02 KST 2016
+cappacity=10
+size=10
+timeout=30
+language=\uD55C\uAE00

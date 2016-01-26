@@ -1,0 +1,34 @@
+package Day13_160114;
+
+import java.util.*;
+import java.io.*;
+
+public class PropertiesEx1 {
+	public static void main(String[] args) throws Exception {
+		Properties prop = new Properties();
+		// prop에 키와 값(key , value)을 저장한다.
+		prop.setProperty("timeout", "30");
+		prop.setProperty("language", "kr");
+		prop.setProperty("size", "10");
+		prop.setProperty("capacity", "10");
+
+		// prop에 저장된 요소들의 Enumeration을 이용해서 출력한다.
+		Enumeration e = prop.propertyNames();
+
+		while (e.hasMoreElements()) {
+			String element = (String) e.nextElement();
+			System.out.println(element + " = " + prop.getProperty(element));
+		}
+		System.out.println();
+		prop.setProperty("size", "20");// size의 값을 20으로 변경한다.
+		System.out.println("size = " + prop.getProperty("size"));
+		System.out.println("capacity = " + prop.getProperty("capacity", "20"));
+		// key값 capacity가 이미 존재하고
+		// 지정된 prop.getProperty("capacity", "20")를 찾지못해서
+		// default값 prop.setProperty("capacity", "10");를 반환한다.
+		System.out.println("loadfactor = " + prop.getProperty("loadfactor", "0.75"));
+		// key값 loadfactor가 없기 때문에 prop에 키와 값(key , value)을 저장한다.
+		System.out.println(prop);// prop에 저장된 요소들을 출력한다.
+		prop.list(System.out);// prop에 저장된 요소들을 화면 (System.out)에 출력한다.콘솔출력
+	}
+}
