@@ -16,7 +16,7 @@ public class RandomEx4 {
 			// 100~200사이의 값을 얻는다.
 		}
 	}
-
+	
 	public static String getRandArr(String[] arr) {
 		return arr[getRand(arr.length - 1)];// 배열에 저장된 값 중 하나를 반환한다.
 	}
